@@ -55,27 +55,25 @@ class Customer
 # 	`Customer#num_reviews`   - Returns the total number of reviews
 # # that a customer has authored - 
 	def num_reviews
-		# Review.all.select do |reviewer|
-		# 	reviewer.customer == self
-		# end
-
+		my_reviews = []
+		my_reviews = Review.all.select do |reviewer|
+			reviewer.customer == self
+		end
+		my_reviews.length
 	end
 
 # `Customer#restaurants`   - Returns a **unique**
 # # array of all restaurants a customer has reviewed
 	def restaurants
-
+		rest_reviews = []
+		rest_reviews = Review.all.select do |restaurant|
+			restaurant.customer == self
+		end
+		rest_reviews.map do |restaurant|
+			restaurant.restaurant
+		end.uniq
 	end
 
 
 end
-
-
-
-
-
-
-
-
-
 

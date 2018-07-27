@@ -18,7 +18,7 @@ class Review
 		@customer = customer
 		@restaurant = restaurant
 		@content = content
-		@rating = rating
+		@rating = rating 
 		@@all << self
 	end
 
@@ -27,21 +27,6 @@ class Review
 	def self.all 
 		@@all 
 	end
-
-# - `Review#customer`
-#   - returns the customer object for that given review
-	def customer
-		Customer.all.select do |customer|
-			customer.review == self
-		end
-	end
-
-# - `Review#rating`
-#   - returns the star rating for a restaurant. This should be an integer from 1-5
-	def review_rating
-		
-	end
-
 
   
 end

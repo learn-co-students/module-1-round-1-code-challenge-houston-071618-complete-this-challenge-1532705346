@@ -26,6 +26,7 @@ erica.add_review(mcd, "okay", 2)
 tom.add_review(pizza_hut, "meh", 3)
 jane.add_review(mcd, "ehh", 1)
 erica.add_review(pizza_hut, "good", 4)
+erica.add_review(mcd, "real bad but the looooongest mcd review here", 1)
 
 
 
