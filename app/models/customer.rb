@@ -38,5 +38,27 @@ class Customer
     end
   end
     
+  def add_review(restaurant, content, rating)
+     Review.new(self, restaurant, content, rating)
+  end
+  
+  def num_reviews 
+    #count number of reviews for customer_name
+    customer_reviews = Review.all.select do |review|
+      review.customer == self 
+    end 
+    customer_reviews.count
+  end
+
+  def restaurants 
+    #return a unique array of all restaurants a customer has reviewed. 
+    restaurants_reviewed = Review.all.select do |review|
+      review.customer == self
+    end
+    my_reviewed_restaurants = restaurants_reviewed.map do |review|
+      review.restaurant.name
+    end
+    my_reviewed_restaurants.uniq
+  end
 
 end

@@ -21,7 +21,12 @@ texas_road_house = Restaurant.new("Texas Road House")
 
 
 #review 
-frank_applebees = Review.new(frank, applebees, 4, "good review")
-jeramy_applebees = Review.new(jeramy, applebees, 2, "negative review")
+
+frank.add_review(applebees, "good review", 4)
+jeramy.add_review(applebees, "negative review", 2)
+frank.add_review(texas_road_house, "good reveiw", 5)
+jeramy.add_review(applebees, "This is a long good review", 4)
+frank_applebees = Review.new(frank, applebees, "really really bad review", 1)
+jeramy_applebees = Review.new(jeramy, applebees, "ok review", 3)
 binding.pry
 0 #leave this here to ensure binding.pry isn't the last line
