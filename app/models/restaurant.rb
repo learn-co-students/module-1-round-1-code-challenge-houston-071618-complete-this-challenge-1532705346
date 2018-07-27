@@ -25,7 +25,7 @@ class Restaurant
   end
 
   def average_star_rating
-    reviews.map(&:rating).reduce(:+) / reviews.length
+    reviews.map(&:rating).reduce(:+).to_f / reviews.length
   end
 
   def longest_review
