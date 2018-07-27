@@ -31,10 +31,10 @@ class Customer
   end
 
   def num_reviews
-    Review.all.select { |i| i.customer.name == name }.length
+    Review.all.select { |i| i.customer == self }.length
   end
 
   def restaurants
-    Review.all.map { |i| i.restaurant if i.customer.name == name }.compact!.uniq!
+    Review.all.map { |i| i.restaurant if i.customer == self }.compact!.uniq!
   end
 end
