@@ -55,10 +55,26 @@ end
     restaurant_ratings_array = restaurant_reviews.map do |restaurant|
       restaurant.rating
     end
-    restaurant_ratings_array.reduce(:+) / restaurant_ratings_array.size.to_f
+    #long hand form of reduce(:+) to understand what's happening:
+    sum = 0
+    restaurant_ratings_array.each do |restaurant_rating|
+      sum += restaurant_rating
+    end
+    sum/restaurant_ratings_array.size.to_f
+    # restaurant_ratings_array.reduce(:+) / restaurant_ratings_array.size.to_f
   end
+
+  #.reduce(:+) is adding up all of the results of the restaurant_ratings_array.
+  #then I divide that array by the number of items within that array (.size) and then make that a float.
 
   # - `Restaurant#longest_review`
   #   - returns the longest review content for a given restaurant
-  
+def longest_review
+  content_array = restaurant_reviews.map do |review|
+    review.content
+  end
+  content_array.max_by(&:length)
+end
+
+
 end
